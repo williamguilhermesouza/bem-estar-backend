@@ -7,6 +7,7 @@ import { AttendanceModule } from './attendance/attendance.module';
 import { MovimentsModule } from './moviments/moviments.module';
 import { PackagesModule } from './packages/packages.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { ConfigModule } from '@nestjs/config';
 
 const PostgresConnection = TypeOrmModule.forRoot({
   type: 'postgres',
@@ -21,16 +22,16 @@ const PostgresConnection = TypeOrmModule.forRoot({
 
 const SqliteConnection = TypeOrmModule.forRoot({
   type: 'sqlite',
-  database: './localdb.db',
-  migrations: ['migrations/*.ts'],
+  database: './local.db',
+  migrations: ['migration/*.ts'],
   cli: {
-    migrationsDir: 'migrations',
+    migrationsDir: 'migration',
   },
 });
 
 @Module({
   imports: [
-    SqliteConnection,
+    ConfigModule.forRoot({}),
     UsersModule,
     PatientsModule,
     AttendanceModule,

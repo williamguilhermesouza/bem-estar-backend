@@ -8,7 +8,7 @@ import { MovimentsModule } from './moviments/moviments.module';
 import { PackagesModule } from './packages/packages.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 
-const typeormPostgres = TypeOrmModule.forRoot({
+const PostgresConnection = TypeOrmModule.forRoot({
   type: 'postgres',
   host: 'localhost', // 'localhost' if running locally, 'postgres' if on docker compose
   port: 5432,
@@ -19,14 +19,14 @@ const typeormPostgres = TypeOrmModule.forRoot({
   synchronize: true,
 });
 
-const typeormSqlite = TypeOrmModule.forRoot({
+const SqliteConnection = TypeOrmModule.forRoot({
   type: 'sqlite',
   database: './localdb.db',
 });
 
 @Module({
   imports: [
-    typeormSqlite,
+    SqliteConnection,
     UsersModule,
     PatientsModule,
     AttendanceModule,

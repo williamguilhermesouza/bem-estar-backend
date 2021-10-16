@@ -22,6 +22,10 @@ const PostgresConnection = TypeOrmModule.forRoot({
 const SqliteConnection = TypeOrmModule.forRoot({
   type: 'sqlite',
   database: './localdb.db',
+  migrations: ['migrations/*.ts'],
+  cli: {
+    migrationsDir: 'migrations',
+  },
 });
 
 @Module({

@@ -21,7 +21,7 @@ export class UsersModel {
   }
 
   async find(): Promise<User[]> {
-    return this.userRepository.find();
+    return await this.userRepository.find();
   }
 
   async findOne(id: number): Promise<User> {

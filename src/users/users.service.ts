@@ -8,7 +8,7 @@ export class UsersService {
   constructor(private readonly usersModel: UsersModel) {}
 
   create(createUserDto: CreateUserDto) {
-    return 'This action adds a new user';
+    return this.usersModel.save(createUserDto);
   }
 
   findAll() {

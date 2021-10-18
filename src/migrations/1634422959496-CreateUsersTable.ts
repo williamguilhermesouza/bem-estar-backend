@@ -1,23 +1,73 @@
-import { MigrationInterface, QueryRunner } from 'typeorm';
+import { MigrationInterface, QueryRunner, Table } from 'typeorm';
 
 export class CreateUsersTable1634422959496 implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
-    await queryRunner.query(`CREATE TABLE user (
-            id int,
-            name varchar(30),
-            sex varchar(30),
-            phone_number varchar(30),
-            street_name varchar(30),
-            street_number varchar(30),
-            street_district varchar(30),
-            city varchar(30),
-            state varchar(30),
-            birth_date date,
-            cpf varchar(30)
-        )`);
+    await queryRunner.createTable(
+      new Table({
+        name: 'user',
+        columns: [
+          {
+            name: 'id',
+            type: 'int',
+            isPrimary: true,
+            generationStrategy: 'increment',
+          },
+          {
+            name: 'name',
+            type: 'varchar',
+            isNullable: false,
+          },
+          {
+            name: 'sex',
+            type: 'varchar',
+            isNullable: false,
+          },
+          {
+            name: 'phone_number',
+            type: 'varchar',
+            isNullable: false,
+          },
+          {
+            name: 'street_name',
+            type: 'varchar',
+            isNullable: false,
+          },
+          {
+            name: 'street_number',
+            type: 'varchar',
+            isNullable: false,
+          },
+          {
+            name: 'street_district',
+            type: 'varchar',
+            isNullable: false,
+          },
+          {
+            name: 'city',
+            type: 'varchar',
+            isNullable: false,
+          },
+          {
+            name: 'state',
+            type: 'varchar',
+            isNullable: false,
+          },
+          {
+            name: 'birth_date',
+            type: 'date',
+            isNullable: false,
+          },
+          {
+            name: 'cpf',
+            type: 'varchar',
+            isNullable: false,
+          },
+        ],
+      }),
+    );
   }
 
   public async down(queryRunner: QueryRunner): Promise<void> {
-    await queryRunner.query(`DROP TABLE user`);
+    await queryRunner.dropTable('user');
   }
 }

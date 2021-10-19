@@ -20,4 +20,12 @@ export class CreateUserDto {
   birth_date: Date;
 
   cpf: string;
+
+  email: string;
+  
+  password: string;
+  
+  createdAt?: string;
+  
+  updatedAt?: string;
 }

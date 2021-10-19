@@ -29,6 +29,10 @@ export class UsersModel {
     return await this.userRepository.findOne(id);
   }
 
+  async findByEmail(email: string): Promise<User> {
+    return await this.userRepository.findOne({email: email});
+  }
+
   async delete(id: number): Promise<User> {
     const user = await this.userRepository.findOne(id);
     await this.userRepository.delete(id);

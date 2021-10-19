@@ -61,6 +61,28 @@ export class CreateUsersTable1634422959496 implements MigrationInterface {
             name: 'cpf',
             type: 'varchar',
             isNullable: false,
+            isUnique: true,
+          },
+          {
+            name: 'email',
+            type: 'varchar',
+            isNullable: false,
+            isUnique: true,
+          },
+          {
+            name: 'password',
+            type: 'varchar',
+            isNullable: false,
+          },
+          {
+            name: 'createdAt',
+            type: 'date',
+            isNullable: false,
+          },
+          {
+            name: 'updatedAt',
+            type: 'date',
+            isNullable: false,
           },
         ],
       }),

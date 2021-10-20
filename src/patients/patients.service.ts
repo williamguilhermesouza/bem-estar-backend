@@ -1,26 +1,29 @@
 import { Injectable } from '@nestjs/common';
 import { CreatePatientDto } from './dto/create-patient.dto';
 import { UpdatePatientDto } from './dto/update-patient.dto';
+import { PatientsModel } from './patients.model';
 
 @Injectable()
 export class PatientsService {
+  constructor(private readonly patientsModel: PatientsModel) {}
+
   create(createPatientDto: CreatePatientDto) {
-    return 'This action adds a new patient';
+    return this.patientsModel.save(createPatientDto);
   }
 
   findAll() {
-    return `This action returns all patients`;
+    return this.patientsModel.find();
   }
 
   findOne(id: number) {
-    return `This action returns a #${id} patient`;
+    return this.patientsModel.findOne(id);
   }
 
   update(id: number, updatePatientDto: UpdatePatientDto) {
-    return `This action updates a #${id} patient`;
+    return this.patientsModel.update(id, updatePatientDto);
   }
 
   remove(id: number) {
-    return `This action removes a #${id} patient`;
+    return this.patientsModel.delete(id);
   }
 }

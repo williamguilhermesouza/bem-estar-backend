@@ -1,26 +1,28 @@
 import { Injectable } from '@nestjs/common';
+import { AttendancesModel } from './attendances.model';
 import { CreateAttendanceDto } from './dto/create-attendance.dto';
 import { UpdateAttendanceDto } from './dto/update-attendance.dto';
 
 @Injectable()
 export class AttendancesService {
+  constructor(private readonly attendancesModel: AttendancesModel) {}
   create(createAttendanceDto: CreateAttendanceDto) {
-    return 'This action adds a new attendance';
+    return this.attendancesModel.save(createAttendanceDto);
   }
 
   findAll() {
-    return `This action returns all attendances`;
+    return this.attendancesModel.find();
   }
 
   findOne(id: number) {
-    return `This action returns a #${id} attendance`;
+    return this.attendancesModel.findOne(id);
   }
 
   update(id: number, updateAttendanceDto: UpdateAttendanceDto) {
-    return `This action updates a #${id} attendance`;
+    return this.attendancesModel.update(id, updateAttendanceDto);
   }
 
   remove(id: number) {
-    return `This action removes a #${id} attendance`;
+    return this.attendancesModel.delete(id);
   }
 }

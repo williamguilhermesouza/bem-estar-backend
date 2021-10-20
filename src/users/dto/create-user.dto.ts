@@ -5,19 +5,19 @@ export class CreateUserDto {
 
   sex: string;
 
-  phone_number: string;
+  phoneNumber: string;
 
-  street_name: string;
+  streetName: string;
 
-  street_number: string;
+  streetNumber: string;
 
-  street_district: string;
+  streetDistrict: string;
 
   city: string;
 
   state: string;
 
-  birth_date: Date;
+  birthDate: Date;
 
   cpf: string;
 

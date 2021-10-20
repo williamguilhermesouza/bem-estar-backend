@@ -23,22 +23,22 @@ export class CreateUsersTable1634422959496 implements MigrationInterface {
             isNullable: false,
           },
           {
-            name: 'phone_number',
+            name: 'phoneNumber',
             type: 'varchar',
             isNullable: false,
           },
           {
-            name: 'street_name',
+            name: 'streetName',
             type: 'varchar',
             isNullable: false,
           },
           {
-            name: 'street_number',
+            name: 'streetNumber',
             type: 'varchar',
             isNullable: false,
           },
           {
-            name: 'street_district',
+            name: 'streetDistrict',
             type: 'varchar',
             isNullable: false,
           },
@@ -53,7 +53,7 @@ export class CreateUsersTable1634422959496 implements MigrationInterface {
             isNullable: false,
           },
           {
-            name: 'birth_date',
+            name: 'birthDate',
             type: 'date',
             isNullable: false,
           },

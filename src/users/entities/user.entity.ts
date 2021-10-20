@@ -12,16 +12,16 @@ export class User {
   sex: string;
 
   @Column()
-  phone_number: string;
+  phoneNumber: string;
 
   @Column()
-  street_name: string;
+  streetName: string;
 
   @Column()
-  street_number: string;
+  streetNumber: string;
 
   @Column()
-  street_district: string;
+  streetDistrict: string;
 
   @Column()
   city: string;
@@ -30,7 +30,7 @@ export class User {
   state: string;
 
   @Column()
-  birth_date: Date;
+  birthDate: Date;
 
   @Column({unique: true})
   cpf: string;

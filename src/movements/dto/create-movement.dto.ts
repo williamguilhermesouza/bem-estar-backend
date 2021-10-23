@@ -1,7 +1,7 @@
 export class CreateMovementDto {
   id?: number;
 
-  patientId: number;
+  patientId?: number;
 
   description: string;
 

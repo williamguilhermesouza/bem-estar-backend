@@ -11,8 +11,8 @@ export class Movement {
   @PrimaryGeneratedColumn()
   id?: number;
 
-  @Column('int')
-  patientId: number;
+  @Column({type: 'int', nullable:true})
+  patientId?: number;
 
   @Column()
   description: string;

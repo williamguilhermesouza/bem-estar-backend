@@ -14,7 +14,7 @@ export class AlterRelationshipBetweenMovementsAndPatients1635039062838
       new TableColumn({
         name: 'patientId',
         type: 'int',
-        isNullable: false,
+        isNullable: true,
       }),
     );
 

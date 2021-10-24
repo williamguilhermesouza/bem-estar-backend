@@ -5,7 +5,7 @@ import {
   TableForeignKey,
 } from 'typeorm';
 
-export class AlterRelationshipBetweenAttendanceAndPatient1634760762670
+export class AlterRelationshipBetweenMovementsAndPatients1635039062838
   implements MigrationInterface
 {
   public async up(queryRunner: QueryRunner): Promise<void> {

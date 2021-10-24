@@ -10,7 +10,7 @@ export class AlterRelationshipBetweenMovementsAndPatients1635039062838
 {
   public async up(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.addColumn(
-      'attendance',
+      'movement',
       new TableColumn({
         name: 'patientId',
         type: 'int',
@@ -19,7 +19,7 @@ export class AlterRelationshipBetweenMovementsAndPatients1635039062838
     );
 
     await queryRunner.createForeignKey(
-      'attendance',
+      'movement',
       new TableForeignKey({
         columnNames: ['patientId'],
         referencedColumnNames: ['id'],

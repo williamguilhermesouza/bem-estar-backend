@@ -1,13 +1,15 @@
 {
   "name": "default",
   "type": "postgres",
-  "host": "localhost",
-  "port": 5432,
-  "username": "postgres",
-  "password": "fadababaca",
-  "database": "bemestar",
+  "url": "postgres://tnyuwuwuaoojky:7c18e604278bf54053f9e90f0a6b6b011a4757a32a0ec25b4949d2f0ffcf59cd@ec2-54-166-37-125.compute-1.amazonaws.com:5432/d5afbo8ujudgd3",
   "entities": ["dist/**/entities/*.js"],
   "migrations": ["dist/migrations/*"],
-  "synchronize": true,
-  "logging": true
+  "synchronize": false,
+  "logging": true,
+  "ssl": true,
+  "extra": {
+    "ssl": {
+      "rejectUnauthorized": false
+    }
+  }
 }

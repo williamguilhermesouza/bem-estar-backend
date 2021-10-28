@@ -27,6 +27,6 @@ export class AttendancesService {
   }
 
   findByPatientId(patientId: number) {
-    return this.attendancesModel.findOne(patientId);
+    return this.attendancesModel.findByPatientId(patientId);
   }
 }

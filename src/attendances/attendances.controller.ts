@@ -45,6 +45,6 @@ export class AttendancesController {
 
   @Get('/patientId/:id')
   findByPatientId(@Param('id') id: string) {
-    return this.attendancesService.findOne(+id);
+    return this.attendancesService.findByPatientId(+id);
   }
 }

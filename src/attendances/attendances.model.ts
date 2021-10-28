@@ -8,7 +8,7 @@ import { Attendance } from './entities/attendance.entity';
 export class AttendancesModel {
   //using constructor to inject patient entity into the service
   constructor(
-@InjectRepository(Attendance)
+    @InjectRepository(Attendance)
     private readonly attendanceRepository: Repository<Attendance>,
   ) {}
 
@@ -33,5 +33,9 @@ export class AttendancesModel {
     const user = await this.attendanceRepository.findOne(id);
     await this.attendanceRepository.delete(id);
     return user;
+  }
+
+  async findByPatientId(patientId: number): Promise<Attendance[]> {
+    return await this.attendanceRepository.find({ patientId });
   }
 }

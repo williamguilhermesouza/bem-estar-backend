@@ -25,4 +25,8 @@ export class AttendancesService {
   remove(id: number) {
     return this.attendancesModel.delete(id);
   }
+
+  findByPatientId(patientId: number) {
+    return this.attendancesModel.findOne(patientId);
+  }
 }

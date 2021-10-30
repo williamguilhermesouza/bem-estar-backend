@@ -7,6 +7,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { AuthModule } from './auth/auth.module';
 import { AttendancesModule } from './attendances/attendances.module';
 import { MovementsModule } from './movements/movements.module';
+import { AgendaModule } from './agenda/agenda.module';
 
 @Module({
   imports: [
@@ -16,6 +17,7 @@ import { MovementsModule } from './movements/movements.module';
     AuthModule,
     AttendancesModule,
     MovementsModule,
+    AgendaModule,
   ],
   controllers: [AppController],
   providers: [AppService],

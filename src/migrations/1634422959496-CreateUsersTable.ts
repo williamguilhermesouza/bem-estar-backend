@@ -20,42 +20,42 @@ export class CreateUsersTable1634422959496 implements MigrationInterface {
           {
             name: 'sex',
             type: 'varchar',
-            isNullable: false,
+            isNullable: true,
           },
           {
             name: 'phoneNumber',
             type: 'varchar',
-            isNullable: false,
+            isNullable: true,
           },
           {
             name: 'streetName',
             type: 'varchar',
-            isNullable: false,
+            isNullable: true,
           },
           {
             name: 'streetNumber',
             type: 'varchar',
-            isNullable: false,
+            isNullable: true,
           },
           {
             name: 'streetDistrict',
             type: 'varchar',
-            isNullable: false,
+            isNullable: true,
           },
           {
             name: 'city',
             type: 'varchar',
-            isNullable: false,
+            isNullable: true,
           },
           {
             name: 'state',
             type: 'varchar',
-            isNullable: false,
+            isNullable: true,
           },
           {
             name: 'birthDate',
             type: 'date',
-            isNullable: false,
+            isNullable: true,
           },
           {
             name: 'cpf',

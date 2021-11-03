@@ -3,29 +3,29 @@ export class CreateUserDto {
 
   name: string;
 
-  sex: string;
+  sex?: string;
 
-  phoneNumber: string;
+  phoneNumber?: string;
 
-  streetName: string;
+  streetName?: string;
 
-  streetNumber: string;
+  streetNumber?: string;
 
-  streetDistrict: string;
+  streetDistrict?: string;
 
-  city: string;
+  city?: string;
 
-  state: string;
+  state?: string;
 
-  birthDate: Date;
+  birthDate?: Date;
 
   cpf: string;
 
   email: string;
-  
+
   password: string;
-  
+
   createdAt?: string;
-  
+
   updatedAt?: string;
 }

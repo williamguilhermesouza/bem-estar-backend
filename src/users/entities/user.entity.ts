@@ -1,4 +1,10 @@
-import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn } from 'typeorm';
+import {
+  Entity,
+  PrimaryGeneratedColumn,
+  Column,
+  CreateDateColumn,
+  UpdateDateColumn,
+} from 'typeorm';
 
 @Entity()
 export class User {
@@ -9,41 +15,41 @@ export class User {
   name: string;
 
   @Column()
-  sex: string;
+  sex?: string;
 
   @Column()
-  phoneNumber: string;
+  phoneNumber?: string;
 
   @Column()
-  streetName: string;
+  streetName?: string;
 
   @Column()
-  streetNumber: string;
+  streetNumber?: string;
 
   @Column()
-  streetDistrict: string;
+  streetDistrict?: string;
 
   @Column()
-  city: string;
+  city?: string;
 
   @Column()
-  state: string;
+  state?: string;
 
-  @Column()
-  birthDate: Date;
+  @Column({ nullable: true })
+  birthDate?: Date;
 
-  @Column({unique: true})
+  @Column({ unique: true })
   cpf: string;
-  
-  @Column({unique: true})
+
+  @Column({ unique: true })
   email: string;
-  
+
   @Column()
-  password?: string;
-  
+  password: string;
+
   @CreateDateColumn()
   createdAt?: string;
-  
+
   @UpdateDateColumn()
   updatedAt?: string;
 }

@@ -1,26 +1,29 @@
 import { Injectable } from '@nestjs/common';
 import { CreateRpgDto } from './dto/create-rpg.dto';
 import { UpdateRpgDto } from './dto/update-rpg.dto';
+import { RpgsModel } from './rpgs.model';
 
 @Injectable()
 export class RpgsService {
+  constructor(private rpgModel: RpgsModel) {}
+
   create(createRpgDto: CreateRpgDto) {
-    return 'This action adds a new rpg';
+    return this.rpgModel.save(createRpgDto);
   }
 
   findAll() {
-    return `This action returns all rpgs`;
+    return this.rpgModel.find();
   }
 
   findOne(id: number) {
-    return `This action returns a #${id} rpg`;
+    return this.rpgModel.findOne(id);
   }
 
   update(id: number, updateRpgDto: UpdateRpgDto) {
-    return `This action updates a #${id} rpg`;
+    return this.rpgModel.update(id, updateRpgDto);
   }
 
   remove(id: number) {
-    return `This action removes a #${id} rpg`;
+    return this.rpgModel.delete(id);
   }
 }

@@ -213,6 +213,11 @@ export class CreateEvaluationsTable1636043545679 implements MigrationInterface {
             isNullable: false,
           },
           {
+            name: 'observations',
+            type: 'varchar',
+            isNullable: true,
+          },
+          {
             name: 'createdAt',
             type: 'date',
             isNullable: false,

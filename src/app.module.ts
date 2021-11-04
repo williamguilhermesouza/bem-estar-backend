@@ -9,6 +9,7 @@ import { AttendancesModule } from './attendances/attendances.module';
 import { MovementsModule } from './movements/movements.module';
 import { AgendaModule } from './agenda/agenda.module';
 import { EvaluationsModule } from './evaluations/evaluations.module';
+import { RpgsModule } from './rpgs/rpgs.module';
 
 @Module({
   imports: [
@@ -20,6 +21,7 @@ import { EvaluationsModule } from './evaluations/evaluations.module';
     MovementsModule,
     AgendaModule,
     EvaluationsModule,
+    RpgsModule,
   ],
   controllers: [AppController],
   providers: [AppService],

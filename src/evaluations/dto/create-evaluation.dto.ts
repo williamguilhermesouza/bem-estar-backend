@@ -81,6 +81,8 @@ export class CreateEvaluationDto {
 
   conduct: string;
 
+  observations?: string;
+
   createdAt?: string;
 
   updatedAt?: string;

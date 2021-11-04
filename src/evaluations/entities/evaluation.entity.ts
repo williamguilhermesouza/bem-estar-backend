@@ -131,6 +131,9 @@ export class Evaluation {
   @Column()
   conduct: string;
 
+  @Column()
+  observations?: string;
+
   @CreateDateColumn()
   createdAt?: string;
 

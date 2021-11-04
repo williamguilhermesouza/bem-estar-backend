@@ -8,6 +8,7 @@ import { AuthModule } from './auth/auth.module';
 import { AttendancesModule } from './attendances/attendances.module';
 import { MovementsModule } from './movements/movements.module';
 import { AgendaModule } from './agenda/agenda.module';
+import { EvaluationsModule } from './evaluations/evaluations.module';
 
 @Module({
   imports: [
@@ -18,6 +19,7 @@ import { AgendaModule } from './agenda/agenda.module';
     AttendancesModule,
     MovementsModule,
     AgendaModule,
+    EvaluationsModule,
   ],
   controllers: [AppController],
   providers: [AppService],

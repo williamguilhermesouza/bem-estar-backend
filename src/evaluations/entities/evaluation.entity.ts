@@ -131,7 +131,7 @@ export class Evaluation {
   @Column()
   conduct: string;
 
-  @Column()
+  @Column({ nullable: true })
   observations?: string;
 
   @CreateDateColumn()

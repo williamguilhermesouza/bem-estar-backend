@@ -34,4 +34,8 @@ export class RpgsModel {
     await this.rpgRepository.delete(id);
     return rpg;
   }
+
+  async findByPatientId(patientId: number): Promise<Rpg[]> {
+    return await this.rpgRepository.find({ patientId });
+  }
 }

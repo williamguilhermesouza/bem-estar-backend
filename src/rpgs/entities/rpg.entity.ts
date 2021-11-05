@@ -11,6 +11,9 @@ export class Rpg {
   @PrimaryGeneratedColumn()
   id?: number;
 
+  @Column('int', { nullable: true })
+  patientId: number;
+
   @Column()
   rightFeet: string;
 

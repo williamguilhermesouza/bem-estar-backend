@@ -26,4 +26,8 @@ export class EvaluationsService {
   remove(id: number) {
     return this.evaluationsModel.delete(id);
   }
+
+  findByPatientId(patientId: number) {
+    return this.evaluationsModel.findByPatientId(patientId);
+  }
 }

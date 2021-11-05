@@ -1,6 +1,8 @@
 export class CreateEvaluationDto {
   id?: number;
 
+  patientId: number;
+
   currentDiseaseHistoric: string;
 
   associateDiseases: string;

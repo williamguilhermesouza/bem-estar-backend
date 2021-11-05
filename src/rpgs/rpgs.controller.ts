@@ -1,4 +1,12 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Body,
+  Patch,
+  Param,
+  Delete,
+} from '@nestjs/common';
 import { RpgsService } from './rpgs.service';
 import { CreateRpgDto } from './dto/create-rpg.dto';
 import { UpdateRpgDto } from './dto/update-rpg.dto';
@@ -30,5 +38,10 @@ export class RpgsController {
   @Delete(':id')
   remove(@Param('id') id: string) {
     return this.rpgsService.remove(+id);
+  }
+
+  @Get('/patientId/:id')
+  findByPatientId(@Param('id') id: string) {
+    return this.rpgsService.findByPatientId(+id);
   }
 }

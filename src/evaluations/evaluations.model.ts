@@ -34,4 +34,8 @@ export class EvaluationsModel {
     await this.evaluationRepository.delete(id);
     return user;
   }
+
+  async findByPatientId(patientId: number): Promise<Evaluation[]> {
+    return await this.evaluationRepository.find({ patientId });
+  }
 }

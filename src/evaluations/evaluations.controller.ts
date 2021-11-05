@@ -42,4 +42,9 @@ export class EvaluationsController {
   remove(@Param('id') id: string) {
     return this.evaluationsService.remove(+id);
   }
+
+  @Get('/patientId/:id')
+  findByPatientId(@Param('id') id: string) {
+    return this.evaluationsService.findByPatientId(+id);
+  }
 }

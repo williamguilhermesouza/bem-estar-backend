@@ -1,6 +1,8 @@
 export class CreateRpgDto {
   id?: number;
 
+  patientId: number;
+
   rightFeet: string;
 
   leftFeet: string;

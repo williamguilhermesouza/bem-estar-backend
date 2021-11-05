@@ -11,6 +11,9 @@ export class Evaluation {
   @PrimaryGeneratedColumn()
   id?: number;
 
+  @Column('int', { nullable: true })
+  patientId: number;
+
   @Column()
   currentDiseaseHistoric: string;
 

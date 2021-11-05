@@ -26,4 +26,8 @@ export class RpgsService {
   remove(id: number) {
     return this.rpgModel.delete(id);
   }
+
+  findByPatientId(patientId: number) {
+    return this.rpgModel.findByPatientId(patientId);
+  }
 }

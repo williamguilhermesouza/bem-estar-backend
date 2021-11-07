@@ -1,9 +1,20 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Body,
+  Patch,
+  Param,
+  Delete,
+  UseGuards,
+} from '@nestjs/common';
 import { MovementsService } from './movements.service';
 import { CreateMovementDto } from './dto/create-movement.dto';
 import { UpdateMovementDto } from './dto/update-movement.dto';
+import { JwtAuthGuard } from '../auth/jwt-auth.guard';
 
 @Controller('movements')
+@UseGuards(JwtAuthGuard)
 export class MovementsController {
   constructor(private readonly movementsService: MovementsService) {}
 
@@ -23,7 +34,10 @@ export class MovementsController {
   }
 
   @Patch(':id')
-  update(@Param('id') id: string, @Body() updateMovementDto: UpdateMovementDto) {
+  update(
+    @Param('id') id: string,
+    @Body() updateMovementDto: UpdateMovementDto,
+  ) {
     return this.movementsService.update(+id, updateMovementDto);
   }
 

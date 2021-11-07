@@ -6,12 +6,15 @@ import {
   Patch,
   Param,
   Delete,
+  UseGuards,
 } from '@nestjs/common';
 import { RpgsService } from './rpgs.service';
 import { CreateRpgDto } from './dto/create-rpg.dto';
 import { UpdateRpgDto } from './dto/update-rpg.dto';
+import { JwtAuthGuard } from '../auth/jwt-auth.guard';
 
 @Controller('rpgs')
+@UseGuards(JwtAuthGuard)
 export class RpgsController {
   constructor(private readonly rpgsService: RpgsService) {}
 

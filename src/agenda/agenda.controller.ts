@@ -14,7 +14,7 @@ import { UpdateAgendaDto } from './dto/update-agenda.dto';
 import { JwtAuthGuard } from '../auth/jwt-auth.guard';
 
 @Controller('agenda')
-//@UseGuards(JwtAuthGuard)
+@UseGuards(JwtAuthGuard)
 export class AgendaController {
   constructor(private readonly agendaService: AgendaService) {}
 

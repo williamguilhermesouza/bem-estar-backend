@@ -7,19 +7,26 @@ import { UsersModel } from './users.model';
 export class UsersService {
   constructor(private readonly usersModel: UsersModel) {}
 
-  create(createUserDto: CreateUserDto) {
-    return this.usersModel.save(createUserDto);
+  async create(createUserDto: CreateUserDto) {
+    const { password, ...rest } = await this.usersModel.save(createUserDto);
+    return rest;
   }
 
-  findAll() {
-    return this.usersModel.find();
+  async findAll() {
+    let users = await this.usersModel.find();
+    users = users.map((user) => {
+      const { password, ...rest } = user;
+      return rest;
+    });
+    return users;
   }
 
-  findOne(id: number) {
-    return this.usersModel.findOne(id);
+  async findOne(id: number) {
+    const { password, ...rest } = await this.usersModel.findOne(id);
+    return rest;
   }
 
-  findByEmail(email: string) {
+  async findByEmail(email: string) {
     return this.usersModel.findByEmail(email);
   }
 
